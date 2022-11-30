@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+body {
+    background-color: rgb(160, 121, 197);
+    font-family: 'Oxygen', sans-serif;
+}
+
+input {
+    text-align: center;
+    font-size: 1.4rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+}
