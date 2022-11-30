@@ -13,8 +13,10 @@ function convertRating(rating) {
     // permet d'arrondir à l'entier supérieur
     console.log(Math.round(newRating))
 
+    // Si nous n'arrivons pas à convertir en nombre, on affiche un message d'erreur
     if (isNaN(newRating)) {
         stars = `Veuillez entrer une évaluation valide`
+        // Nous allons vérifier si le résultat est un nombre entier
     } else if (Number.isInteger(newRating)) {
         for (i = 1; i <= newRating; i++) {
             stars += `<i class="bi bi-star-fill"></i>`
@@ -32,6 +34,7 @@ function convertRating(rating) {
         }
     }
 
+    // Nous retournons donc les étoiles
     return stars
 
 }
