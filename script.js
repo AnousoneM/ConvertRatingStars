@@ -14,13 +14,15 @@ function convertRating(rating) {
     console.log(Math.round(newRating))
 
     // Si nous n'arrivons pas à convertir en nombre, on affiche un message d'erreur
-    if (isNaN(newRating)) {
+    if (isNaN(newRating) || (newRating * 2) > 10 ) {
         stars = `Veuillez entrer une évaluation valide`
         // Nous allons vérifier si le résultat est un nombre entier
     } else if (Number.isInteger(newRating)) {
         for (i = 1; i <= newRating; i++) {
             stars += `<i class="bi bi-star-fill"></i>`
         }
+        // nous rajoutons également la note sur 10
+        stars += `<span class="text-dark mx-2">(${newRating})</span>`
         // nous comparons si nous devons rajouter une étoile selon les arrondies, ex . 4 et 5, il faut une demi étoile en plus
     } else if (Math.floor(newRating) != Math.round(newRating)) {
         for (i = 1; i <= newRating; i++) {
@@ -28,10 +30,14 @@ function convertRating(rating) {
         }
         // nous rajoutons à la fin la demi étoile
         stars += `<i class="bi bi-star-half"></i>`
+        // nous rajoutons également la note sur 10
+        stars += `<span class="text-dark mx-2">(${newRating})</span>`
     } else {
         for (i = 1; i <= newRating; i++) {
             stars += `<i class="bi bi-star-fill"></i>`
         }
+        // nous rajoutons également la note sur 10
+        stars += `<span class="text-dark mx-2">(${newRating})</span>`
     }
 
     // Nous retournons donc les étoiles
